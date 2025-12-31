@@ -1,0 +1,1385 @@
+<!DOCTYPE html>
+<html lang="my">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mingalar Moment | Digital Wedding Invitation Myanmar</title>
+    <meta name="description"
+        content="Create your perfect Digital Wedding Invitation with Mingalar Moment. Beautiful, responsive, and easy-to-share wedding websites in Myanmar.">
+    <meta name="keywords"
+        content="Myanmar Wedding, Digital Invitation, Wedding Website, E-Invitation, Mingalar Wedding, Wedding Planner Myanmar">
+    <meta name="author" content="Mingalar Moment">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mingalarmoment.com/">
+    <meta property="og:title" content="Mingalar Moment | Digital Wedding Invitation">
+    <meta property="og:description" content="Make your wedding invitation special with our premium digital services.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1606800052052-a08af7148866?q=80&w=2070">
+
+    <!-- Favicon -->
+    <link rel="icon" href="envelope.png" type="image/png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700&family=Pyidaungsu:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <style>
+        :root {
+            --gold: #BFA05A;
+            --dark-gold: #947436;
+            --cream: #F8F5F2;
+            --dark: #222222;
+            --white: #ffffff;
+            --white-glass: rgba(255, 255, 255, 0.85);
+            --shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+            --shadow-hover: 0 30px 60px rgba(191, 160, 90, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Pyidaungsu', serif;
+            background-color: var(--cream);
+            color: var(--dark);
+            scroll-behavior: smooth;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+
+        /* English Typography Overrides */
+        html[lang="en"] body {
+            font-family: 'Lato', sans-serif;
+        }
+
+        html[lang="en"] h1,
+        html[lang="en"] h2,
+        html[lang="en"] h3,
+        html[lang="en"] .logo {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: var(--white-glass);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--gold);
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .lang-toggle {
+            background: none;
+            border: 2px solid var(--gold);
+            color: var(--gold);
+            padding: 5px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: bold;
+            transition: 0.3s;
+            margin-left: 20px;
+        }
+
+        .lang-toggle:hover {
+            background: var(--gold);
+            color: white;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--gold);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-links a.active {
+            color: var(--gold);
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: var(--dark);
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(rgba(255, 252, 247, 0.6), rgba(255, 252, 247, 0.6)),
+                url('https://images.unsplash.com/photo-1606800052052-a08af7148866?q=80&w=2070');
+            background-size: cover;
+            background-position: center;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--dark-gold);
+            margin-bottom: 20px;
+            line-height: 1.5;
+            letter-spacing: -0.02em;
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin-bottom: 30px;
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.3s forwards;
+        }
+
+        .hero .btn {
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.6s forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUpCentered {
+            from {
+                opacity: 0;
+                transform: translate(-50%, 30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translate(-50%, 0);
+            }
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, var(--gold), var(--dark-gold));
+            color: white;
+            padding: 16px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            letter-spacing: 0.05em;
+            box-shadow: 0 10px 20px rgba(197, 160, 89, 0.3);
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: var(--dark-gold);
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 6px 20px rgba(197, 160, 89, 0.6);
+        }
+
+        /* Scroll Down Animation */
+        .scroll-down {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            opacity: 0;
+            animation: fadeInUpCentered 1s ease 1s forwards;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .mouse {
+            width: 30px;
+            height: 50px;
+            border: 2px solid var(--dark-gold);
+            border-radius: 20px;
+            position: relative;
+            margin-bottom: 5px;
+        }
+
+        .wheel {
+            width: 4px;
+            height: 8px;
+            background: var(--dark-gold);
+            border-radius: 2px;
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: scrollWheel 1.5s infinite;
+        }
+
+        .arrows span {
+            display: block;
+            width: 10px;
+            height: 10px;
+            border-bottom: 2px solid var(--dark-gold);
+            border-right: 2px solid var(--dark-gold);
+            transform: rotate(45deg);
+            margin: -3px auto 0;
+            animation: scrollArrow 1.5s infinite;
+        }
+
+        .arrows span:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .arrows span:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes scrollWheel {
+            0% {
+                top: 10px;
+                opacity: 1;
+            }
+
+            100% {
+                top: 30px;
+                opacity: 0;
+            }
+        }
+
+        @keyframes scrollArrow {
+            0% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        /* Section Styling */
+        section {
+            padding: 100px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--dark-gold);
+            margin-bottom: 10px;
+        }
+
+        .section-title .line {
+            width: 80px;
+            height: 3px;
+            background: var(--gold);
+            margin: 0 auto;
+        }
+
+        /* Pricing Table */
+        .price-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .price-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid rgba(191, 160, 90, 0.1);
+            box-shadow: var(--shadow);
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .price-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--gold);
+        }
+
+        .price-card.popular {
+            border: 2px solid var(--gold);
+            transform: scale(1.05);
+            position: relative;
+        }
+
+        .price-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .price-card .cost {
+            font-size: 2rem;
+            color: var(--gold);
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .price-card ul {
+            list-style: none;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .price-card ul li {
+            margin-bottom: 10px;
+            border-bottom: 1px solid #f9f9f9;
+            padding-bottom: 5px;
+        }
+
+        /* About Us */
+        .about {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            background: #fff;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-img {
+            flex: 1;
+            border-radius: 20px;
+            overflow: hidden;
+            height: 400px;
+        }
+
+        .about-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Portfolio */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .portfolio-item {
+            background: #eee;
+            height: 450px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #999;
+            background-size: cover;
+            border: 1px solid #ddd;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .portfolio-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Scroll Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hamburger Toggle Animation */
+        .hamburger.toggle .line1 {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .hamburger.toggle .line2 {
+            opacity: 0;
+        }
+
+        .hamburger.toggle .line3 {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        /* Preloader */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--cream);
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
+        }
+
+        .loader-content {
+            text-align: center;
+        }
+
+        .loader-logo {
+            width: 80px;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+
+        .loader-line {
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            margin: 0 auto;
+            animation: loadLine 2s ease forwards;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(0.95);
+                opacity: 0.8;
+            }
+
+            50% {
+                transform: scale(1.05);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(0.95);
+                opacity: 0.8;
+            }
+        }
+
+        @keyframes loadLine {
+            0% {
+                width: 0;
+            }
+
+            100% {
+                width: 150px;
+            }
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 60px 8%;
+            text-align: center;
+        }
+
+        .social-links a {
+            color: var(--gold);
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hamburger {
+                display: flex;
+                z-index: 1001;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 80px;
+                right: 0;
+                height: calc(100vh - 80px);
+                background: var(--white-glass);
+                backdrop-filter: blur(15px);
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+                transform: translateX(100%);
+                transition: transform 0.4s ease-in-out;
+                padding-top: 50px;
+                box-shadow: none;
+            }
+
+            .nav-links.active {
+                transform: translateX(0%);
+            }
+
+            .nav-links li {
+                opacity: 0;
+            }
+
+            /* Animate Links */
+            .nav-links.active li {
+                opacity: 1;
+                transition: opacity 0.5s ease 0.2s;
+            }
+
+            /* Layout Adjustments */
+            section {
+                padding: 60px 5%;
+            }
+
+            .about {
+                flex-direction: column;
+            }
+
+            .about-img {
+                height: 300px;
+                width: 100%;
+            }
+
+            .price-grid,
+            .portfolio-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+
+            /* Lightbox */
+            .lightbox {
+                display: none;
+                position: fixed;
+                z-index: 2000;
+                padding-top: 50px;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                overflow: auto;
+                background-color: rgba(0, 0, 0, 0.9);
+            }
+
+            .lightbox-content {
+                display: block;
+                margin: auto;
+                max-width: 90%;
+                max-height: 80vh;
+                object-fit: contain;
+                animation: zoom 0.6s;
+            }
+
+            @keyframes zoom {
+                from {
+                    transform: scale(0)
+                }
+
+                to {
+                    transform: scale(1)
+                }
+            }
+
+            .close {
+                position: absolute;
+                top: 15px;
+                right: 35px;
+                color: #f1f1f1;
+                font-size: 40px;
+                font-weight: bold;
+                transition: 0.3s;
+                cursor: pointer;
+            }
+
+            .close:hover,
+            .close:focus {
+                color: var(--gold);
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+            .prev,
+            .next {
+                cursor: pointer;
+                position: absolute;
+                top: 50%;
+                width: auto;
+                padding: 16px;
+                margin-top: -50px;
+                color: white;
+                font-weight: bold;
+                font-size: 20px;
+                transition: 0.6s ease;
+                border-radius: 0 3px 3px 0;
+                user-select: none;
+                -webkit-user-select: none;
+            }
+
+            .next {
+                right: 0;
+                border-radius: 3px 0 0 3px;
+            }
+
+            .prev:hover,
+            .next:hover {
+                background-color: rgba(0, 0, 0, 0.8);
+                color: var(--gold);
+            }
+        }
+
+        .swiper {
+            width: 100%;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        .swiper-slide {
+            background-position: center;
+            background-size: cover;
+            width: 720px;
+            height: 405px;
+            /* Maintains roughly 16:9 aspect ratio */
+            filter: blur(2px);
+            opacity: 0.7;
+            transition: 0.3s;
+        }
+
+        .swiper-slide-active {
+            filter: blur(0);
+            opacity: 1;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .swiper-pagination-bullet-active {
+            background: var(--gold) !important;
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: var(--gold) !important;
+        }
+
+        /* Contact Section Redesign */
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+            background: var(--white);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(191, 160, 90, 0.1);
+        }
+
+        .contact-info,
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+            text-align: left;
+        }
+
+        .contact-info h3,
+        .contact-form h3 {
+            color: var(--dark-gold);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .contact-item span:first-child {
+            font-size: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            font-family: inherit;
+            transition: 0.3s;
+            background: #f9f9f9;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+            box-shadow: 0 0 10px rgba(191, 160, 90, 0.2);
+            background: #fff;
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        /* Footer Redesign */
+        footer {
+            background: var(--dark);
+            color: #ddd;
+            padding: 80px 8% 30px;
+            font-size: 1rem;
+            text-align: left;
+            /* Reset text align */
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+
+        .footer-col h3 {
+            color: var(--gold);
+            margin-bottom: 25px;
+            font-size: 1.3rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+            padding-left: 5px;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--gold);
+            border-radius: 50%;
+            margin-right: 10px;
+            text-decoration: none;
+            transition: 0.3s;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .social-icons a:hover {
+            background: var(--gold);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader-content">
+            <img src="envelope.png" alt="Mingalar Moment" class="loader-logo">
+            <div class="loader-line"></div>
+        </div>
+    </div>
+
+    <nav>
+        <div class="logo">
+            <img src="envelope.png" alt="Icon">
+            Mingalar Moment
+        </div>
+        <div class="hamburger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home" class="active" data-i18n="nav_home">ပင်မစာမျက်နှာ</a></li>
+            <li><a href="#about" data-i18n="nav_about">ကျွန်ုပ်တို့အကြောင်း</a></li>
+            <li><a href="#prices" data-i18n="nav_prices">ဈေးနှုန်းများ</a></li>
+            <li><a href="#portfolio" data-i18n="nav_portfolio">လက်ရာများ</a></li>
+            <li><a href="#contact" data-i18n="nav_contact">ဆက်သွယ်ရန်</a></li>
+        </ul>
+        <button class="lang-toggle" id="langToggle">EN</button>
+    </nav>
+
+    <section id="home" class="hero">
+        <h1 data-i18n="hero_title">မင်္ဂလာအချိန်တိုင်းကို <br>ပိုမိုထူးခြားစေဖို့</h1>
+        <p data-i18n="hero_subtitle">မြန်မာ့ရိုးရာနှင့် ခေတ်မှီဒီဇိုင်းများ ပေါင်းစပ်ထားသော Wedding Digital Invitation
+            ဝန်ဆောင်မှု။</p>
+        <a href="#contact" class="btn" data-i18n="hero_cta">အခုပဲ စုံစမ်းမေးမြန်းပါ</a>
+
+        <!-- Scroll Down Indicator -->
+        <a href="#about" class="scroll-down">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <div class="arrows">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </a>
+    </section>
+
+    <section id="about" class="about reveal">
+        <div class="about-img">
+            <img src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?q=80&w=2070" alt="Wedding">
+        </div>
+        <div class="about-text">
+            <h2 data-i18n="about_title">Mingalar Moment အကြောင်း</h2><br>
+            <p data-i18n="about_desc">ကျွန်ုပ်တို့ Mingalar Moment သည် မင်္ဂလာမောင်နှံများအတွက် အချိန်ကုန်သက်သာပြီး
+                လူတန်းစားမရွေး
+                အသုံးပြုနိုင်မည့် Digital ဖိတ်စာများကို အကောင်းဆုံးဝန်ဆောင်မှုပေးနေပါသည်။ စက္ကူဖိတ်စာများထက်
+                ပိုမိုစုံလင်ပြီး ခေတ်မှီလှပသော Digital အတွေ့အကြုံကို ဖန်တီးပေးလိုခြင်းမှာ ကျွန်ုပ်တို့၏
+                ရည်ရွယ်ချက်ဖြစ်ပါသည်။</p>
+        </div>
+    </section>
+
+    <section id="prices" class="reveal">
+        <div class="section-title">
+            <h2 data-i18n="prices_title">ဝန်ဆောင်မှု ဈေးနှုန်းများ</h2>
+            <div class="line"></div>
+        </div>
+        <div class="price-grid">
+            <div class="price-card">
+                <h3>Basic</h3>
+                <div class="cost" data-i18n="price_basic_cost">၃၀,၀၀၀ ကျပ်</div>
+                <ul>
+                    <li data-i18n="price_basic_1">✅ Standard Design (1 page)</li>
+                    <li data-i18n="price_basic_2">✅ Background Music</li>
+                    <li data-i18n="price_basic_3">✅ Google Map Location</li>
+                    <li data-i18n="price_basic_4">✅ 3 Months Hosting</li>
+                </ul>
+                <a href="#" class="btn" style="background:none; color:var(--gold); border:1px solid var(--gold);"
+                    data-i18n="btn_choose">ရွေးချယ်ရန်</a>
+            </div>
+            <div class="price-card popular">
+                <div style="background:var(--gold); color:white; position:absolute; top:0; left:50%; transform:translateX(-50%); padding:5px 20px; border-radius:0 0 10px 10px; font-size:0.8rem;"
+                    data-i18n="label_bestseller">
+                    BEST SELLER</div>
+                <h3>Standard</h3>
+                <div class="cost" data-i18n="price_std_cost">၅၀,၀၀၀ ကျပ်</div>
+                <ul>
+                    <li data-i18n="price_std_1">✅ Premium Design (Multi-page)</li>
+                    <li data-i18n="price_std_2">✅ Photo Gallery (10 Pics)</li>
+                    <li data-i18n="price_std_3">✅ RSVP System (ဧည့်စာရင်း)</li>
+                    <li data-i18n="price_std_4">✅ 1 Year Hosting</li>
+                </ul>
+                <a href="#" class="btn" data-i18n="btn_choose">ရွေးချယ်ရန်</a>
+            </div>
+            <div class="price-card">
+                <h3>Custom/VIP</h3>
+                <div class="cost" data-i18n="price_vip_cost">၈၀,၀၀၀ ကျပ်</div>
+                <ul>
+                    <li data-i18n="price_vip_1">✅ Fully Custom Layout</li>
+                    <li data-i18n="price_vip_2">✅ Countdown Timer</li>
+                    <li data-i18n="price_vip_3">✅ Video Integration</li>
+                    <li data-i18n="price_vip_4">✅ Priority Support</li>
+                </ul>
+                <a href="#" class="btn" style="background:none; color:var(--gold); border:1px solid var(--gold);"
+                    data-i18n="btn_choose">ရွေးချယ်ရန်</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="portfolio reveal">
+        <div class="section-title">
+            <h2 data-i18n="portfolio_title">ကျွန်ုပ်တို့၏ လက်ရာများ</h2>
+            <div class="line"></div>
+        </div>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="mockup1.png" /></div>
+                <div class="swiper-slide"><img src="mockup2.png" /></div>
+                <div class="swiper-slide"><img src="mockup3.png" /></div>
+                <div class="swiper-slide"><img src="mockup4.png" /></div>
+                <div class="swiper-slide"><img src="mockup5.png" /></div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="section-title">
+            <h2 data-i18n="contact_title">ဆက်သွယ်ရန်</h2>
+            <div class="line"></div>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3 data-i18n="contact_subtitle_info">ဆက်သွယ်ရန် လိပ်စာ</h3>
+                <div class="contact-item">
+                    <span>📞</span>
+                    <span data-i18n="contact_phone">၀၉ xxxxxxxx</span>
+                </div>
+                <div class="contact-item">
+                    <span>💬</span>
+                    <span>m.me/MingalarMoment</span>
+                </div>
+                <div class="contact-item">
+                    <span>📧</span>
+                    <span>hello@mingalarmoment.com</span>
+                </div>
+                <p style="margin-top: 20px; opacity: 0.8; line-height: 1.6;" data-i18n="contact_desc">
+                    မင်္ဂလာပွဲအတွက် အသေးစိတ်ဆွေးနွေးတိုင်ပင်လိုပါက အချိန်မရွေး ဆက်သွယ်နိုင်ပါသည်။ ကိုယ်တိုင်စိတ်ကြိုက်
+                    ဒီဇိုင်းများအတွက်လည်း အထူးဝန်ဆောင်မှုပေးပါသည်။
+                </p>
+            </div>
+            <div class="contact-form">
+                <h3 data-i18n="contact_subtitle_form">စာပို့ရန်</h3>
+                <form id="contactForm" action="https://formspree.io/f/mnjqrkwp" method="POST">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="သင့်အမည်" data-i18n="placeholder_name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" name="phone" placeholder="ဖုန်းနံပါတ်" data-i18n="placeholder_phone" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" placeholder="အကြောင်းအရာ" data-i18n="placeholder_msg"
+                            required></textarea>
+                    </div>
+                    <button type="submit" class="btn"
+                        style="border: none; width: 100%; cursor: pointer; font-size: 1rem;"
+                        data-i18n="contact_btn">Send Message</button>
+                    <p id="form-status"
+                        style="margin-top:10px; text-align:center; font-weight:bold; color:var(--dark-gold);"></p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <div class="logo" style="color:white; margin-bottom: 20px;">
+                    <img src="envelope.png" alt="Icon" style=""> Mingalar Moment
+                </div>
+                <p data-i18n="footer_about" style="line-height: 1.6; opacity: 0.8;">သင့်မင်္ဂလာပွဲအတွက် အလှပဆုံးသော
+                    Digital အမှတ်တရများကို ဖန်တီးပေးနေသော ဝန်ဆောင်မှု။</p>
+            </div>
+            <div class="footer-col">
+                <h3 data-i18n="footer_links">အမြန်ကြည့်ရန်</h3>
+                <ul class="footer-links">
+                    <li><a href="#" data-i18n="nav_home">ပင်မစာမျက်နှာ</a></li>
+                    <li><a href="#about" data-i18n="nav_about">ကျွန်ုပ်တို့အကြောင်း</a></li>
+                    <li><a href="#prices" data-i18n="nav_prices">ဈေးနှုန်းများ</a></li>
+                    <li><a href="#portfolio" data-i18n="nav_portfolio">လက်ရာများ</a></li>
+                    <li><a href="#contact" data-i18n="nav_contact">ဆက်သွယ်ရန်</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3 data-i18n="footer_social">Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook">
+                        <svg fill="currentColor" viewBox="0 0 24 24" width="20" height="20">
+                            <path
+                                d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14-3.55 0-5.52 2.166-5.52 6.388V9.5h-2.5v4h2.5v9h5v-9z" />
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="Instagram">
+                        <svg fill="currentColor" viewBox="0 0 24 24" width="20" height="20">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="Telegram">
+                        <svg fill="currentColor" viewBox="0 0 24 24" width="20" height="20">
+                            <path
+                                d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 11.944 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
+                        </svg>
+                    </a>
+                </div>
+                <p style="margin-top: 20px; color: var(--gold);" data-i18n="contact_phone_footer">Phone: 09 xxxxxxxx</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2024 Mingalar Moment. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+
+</body>
+
+<script>
+    // Preloader
+    window.addEventListener('load', () => {
+        const preloader = document.getElementById('preloader');
+        setTimeout(() => {
+            preloader.style.opacity = '0';
+            preloader.style.visibility = 'hidden';
+        }, 800); // Slight delay for smoother experience
+    });
+
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    const links = document.querySelectorAll('.nav-links li');
+
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        hamburger.classList.toggle('toggle');
+    });
+
+    // Close menu when clicking a link
+    links.forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            hamburger.classList.remove('toggle');
+        });
+    });
+
+    // Scroll Reveal
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px"
+    };
+
+    const revealOnScroll = new IntersectionObserver(function (entries, revealOnScroll) {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) {
+                return;
+            } else {
+                entry.target.classList.add('active');
+                revealOnScroll.unobserve(entry.target);
+            }
+        });
+    }, revealOptions);
+
+    revealElements.forEach(element => {
+        revealOnScroll.observe(element);
+    });
+
+    // Language Support
+    const langToggle = document.getElementById('langToggle');
+    let currentLang = 'mm';
+
+    const translations = {
+        mm: {
+            nav_home: 'ပင်မစာမျက်နှာ',
+            nav_about: 'ကျွန်ုပ်တို့အကြောင်း',
+            nav_prices: 'ဈေးနှုန်းများ',
+            nav_portfolio: 'လက်ရာများ',
+            nav_contact: 'ဆက်သွယ်ရန်',
+            hero_title: 'မင်္ဂလာအချိန်တိုင်းကို <br>ပိုမိုထူးခြားစေဖို့',
+            hero_subtitle: 'မြန်မာ့ရိုးရာနှင့် ခေတ်မှီဒီဇိုင်းများ ပေါင်းစပ်ထားသော Wedding Digital Invitation ဝန်ဆောင်မှု။',
+            hero_cta: 'အခုပဲ စုံစမ်းမေးမြန်းပါ',
+            about_title: 'Mingalar Moment အကြောင်း',
+            about_desc: 'ကျွန်ုပ်တို့ Mingalar Moment သည် မင်္ဂလာမောင်နှံများအတွက် အချိန်ကုန်သက်သာပြီး လူတန်းစားမရွေး အသုံးပြုနိုင်မည့် Digital ဖိတ်စာများကို အကောင်းဆုံးဝန်ဆောင်မှုပေးနေပါသည်။ စက္ကူဖိတ်စာများထက် ပိုမိုစုံလင်ပြီး ခေတ်မှီလှပသော Digital အတွေ့အကြုံကို ဖန်တီးပေးလိုခြင်းမှာ ကျွန်ုပ်တို့၏ ရည်ရွယ်ချက်ဖြစ်ပါသည်။',
+            prices_title: 'ဝန်ဆောင်မှု ဈေးနှုန်းများ',
+            label_bestseller: 'အရောင်းရဆုံး',
+            price_basic_cost: '၃၀,၀၀၀ ကျပ်',
+            price_basic_1: '✅ Standard Design (1 page)',
+            price_basic_2: '✅ Background Music',
+            price_basic_3: '✅ Google Map Location',
+            price_basic_4: '✅ 3 Months Hosting',
+            price_std_cost: '၅၀,၀၀၀ ကျပ်',
+            price_std_1: '✅ Premium Design (Multi-page)',
+            price_std_2: '✅ Photo Gallery (10 Pics)',
+            price_std_3: '✅ RSVP System (ဧည့်စာရင်း)',
+            price_std_4: '✅ 1 Year Hosting',
+            price_vip_cost: '၈၀,၀၀၀ ကျပ်',
+            price_vip_1: '✅ Fully Custom Layout',
+            price_vip_2: '✅ Countdown Timer',
+            price_vip_3: '✅ Video Integration',
+            price_vip_4: '✅ Priority Support',
+            btn_choose: 'ရွေးချယ်ရန်',
+            portfolio_title: 'ကျွန်ုပ်တို့၏ လက်ရာများ',
+            contact_title: 'ဆက်သွယ်ရန်',
+            contact_subtitle_info: 'ဆက်သွယ်ရန် လိပ်စာ',
+            contact_subtitle_form: 'စာပို့ရန်',
+            contact_desc: 'မင်္ဂလာပွဲအတွက် အသေးစိတ်ဆွေးနွေးတိုင်ပင်လိုပါက အချိန်မရွေး ဆက်သွယ်နိုင်ပါသည်။ ကိုယ်တိုင်စိတ်ကြိုက် ဒီဇိုင်းများအတွက်လည်း အထူးဝန်ဆောင်မှုပေးပါသည်။',
+            placeholder_name: 'သင့်အမည်',
+            placeholder_phone: 'ဖုန်းနံပါတ်',
+            placeholder_msg: 'အကြောင်းအရာ',
+            contact_phone: 'ဖုန်း - ၀၉ xxxxxxxx',
+            contact_btn: 'Send Message',
+            contact_btn: 'Send Message',
+            footer_about: 'သင့်မင်္ဂလာပွဲအတွက် အလှပဆုံးသော Digital အမှတ်တရများကို ဖန်တီးပေးနေသော ဝန်ဆောင်မှု။',
+            footer_links: 'အမြန်ကြည့်ရန်',
+            footer_social: 'Follow Us',
+            contact_phone_footer: 'ဖုန်း - ၀၉ xxxxxxxx'
+        },
+        en: {
+            nav_home: 'Home',
+            nav_about: 'About Us',
+            nav_prices: 'Pricing',
+            nav_portfolio: 'Portfolio',
+            nav_contact: 'Contact',
+            hero_title: 'Making Your Wedding<br>Moments Special',
+            hero_subtitle: 'Premium Digital Wedding Invitation Service combining Myanmar Tradition with Modern Design.',
+            hero_cta: 'Inquire Now',
+            about_title: 'About Mingalar Moment',
+            about_desc: 'We provide the best Digital Invitation service for couples, saving time and accessible to everyone. Our mission is to create a modern, beautiful digital experience that surpasses traditional paper invitations.',
+            prices_title: 'Service Pricing',
+            label_bestseller: 'BEST SELLER',
+            price_basic_cost: '30,000 MMK',
+            price_basic_1: '✅ Standard Design (1 page)',
+            price_basic_2: '✅ Background Music',
+            price_basic_3: '✅ Google Map Location',
+            price_basic_4: '✅ 3 Months Hosting',
+            price_std_cost: '50,000 MMK',
+            price_std_1: '✅ Premium Design (Multi-page)',
+            price_std_2: '✅ Photo Gallery (10 Pics)',
+            price_std_3: '✅ RSVP System',
+            price_std_4: '✅ 1 Year Hosting',
+            price_vip_cost: '80,000 MMK',
+            price_vip_1: '✅ Fully Custom Layout',
+            price_vip_2: '✅ Countdown Timer',
+            price_vip_3: '✅ Video Integration',
+            price_vip_4: '✅ Priority Support',
+            btn_choose: 'Choose Plan',
+            portfolio_title: 'Our Portfolio',
+            contact_title: 'Contact Us',
+            contact_subtitle_info: 'Contact Information',
+            contact_subtitle_form: 'Send us a message',
+            contact_desc: 'Feel free to contact us anytime to discuss details for your wedding. We also provide special services for custom designs.',
+            placeholder_name: 'Your Name',
+            placeholder_phone: 'Phone Number',
+            placeholder_msg: 'Message',
+            contact_phone: 'Phone - 09 xxxxxxxx',
+            contact_btn: 'Send Message',
+            contact_btn: 'Send Message',
+            footer_links: 'Quick Links',
+            footer_social: 'Follow Us',
+            footer_about: 'Creating the most beautiful digital memories for your wedding.',
+            contact_phone_footer: 'Phone - 09 xxxxxxxx'
+        }
+    };
+
+    langToggle.addEventListener('click', () => {
+        currentLang = currentLang === 'mm' ? 'en' : 'mm';
+        langToggle.innerText = currentLang === 'mm' ? 'EN' : 'MM';
+        updateLanguage();
+    });
+
+    function updateLanguage() {
+        document.documentElement.lang = currentLang; // Update HTML lang attribute
+        const elements = document.querySelectorAll('[data-i18n]');
+        elements.forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (translations[currentLang][key]) {
+                el.innerHTML = translations[currentLang][key];
+            }
+        });
+    }
+
+    /* Lightbox logic removed */
+
+    // Nav Item Indicator (Scroll Spy)
+    const sections = document.querySelectorAll('section');
+    const navItems = document.querySelectorAll('.nav-links a');
+
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            // - 150 offset for better triggering
+            if (scrollY >= (sectionTop - 150)) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navItems.forEach(a => {
+            a.classList.remove('active');
+            if (a.getAttribute('href').includes(current)) {
+                a.classList.add('active');
+            }
+        });
+    });
+
+    // Contact Form Handling
+    var form = document.getElementById("contactForm");
+
+    async function handleSubmit(event) {
+        event.preventDefault();
+        var status = document.getElementById("form-status");
+        var btn = form.querySelector("button");
+        var originalText = btn.innerHTML;
+
+        // Loading State
+        btn.innerHTML = "Sending...";
+        btn.disabled = true;
+        btn.style.opacity = "0.7";
+        btn.style.cursor = "not-allowed";
+
+        var data = new FormData(event.target);
+        fetch(event.target.action, {
+            method: form.method,
+            body: data,
+            headers: {
+                'Accept': 'application/json'
+            }
+        }).then(response => {
+            if (response.ok) {
+                status.innerHTML = "ကျေးဇူးတင်ပါသည်! မကြာမီ ပြန်လည်ဆက်သွယ်ပါမည်။";
+                status.style.color = "green";
+                form.reset();
+            } else {
+                response.json().then(data => {
+                    if (Object.hasOwn(data, 'errors')) {
+                        status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+                    } else {
+                        status.innerHTML = "Oops! There was a problem submitting your form"
+                    }
+                })
+            }
+        }).catch(error => {
+            console.log(error);
+            status.innerHTML = "Oops! There was a problem submitting your form"
+        }).finally(() => {
+            // Reset Button
+            btn.innerHTML = originalText;
+            btn.disabled = false;
+            btn.style.opacity = "1";
+            btn.style.cursor = "pointer";
+        });
+    }
+    form.addEventListener("submit", handleSubmit)
+</script>
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+    var swiper = new Swiper(".mySwiper", {
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        loop: true,
+        autoplay: {
+            delay: 4500,
+            disableOnInteraction: false,
+        },
+        coverflowEffect: {
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: true,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+</script>
+
+
+</html>
